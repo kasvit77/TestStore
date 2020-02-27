@@ -1,0 +1,20 @@
+﻿@model IEnumerable<stock.Models.Storage>
+@{
+    ViewBag.Title = "Все склады";
+}
+<a asp-action="Create" class="btn btn-success">Добавить склад</a>
+<table class="table">
+    <tr><td>Название</td><td>Адрес</td><td>Телефон</td><td>Менеджер</td><td>Описание</td></tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.Name</td>
+        <td>@item.Address</td>
+        <td>@item.Phone</td>
+        <td>@item.Manager</td>
+        <td>@item.description</td>
+        <td><a asp-action="Edit/@item.Id" class="btn btn-primary">Редактировать</a></td>
+        <td><a asp-action="Delete/@item.Id" class="btn btn-danger">Удалить</a></td>
+    </tr>
+    }
+</table>

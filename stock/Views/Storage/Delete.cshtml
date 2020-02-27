@@ -1,0 +1,38 @@
+﻿@model stock.Models.Storage
+@{
+    ViewBag.Title = "Удалить склад";
+}
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>Наименование</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>Адрес</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt>Телефон</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt>Менеджер</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Manager)
+        </dd>
+        <dt>Описание</dt>
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+    </dl>
+
+    <div>
+        <form asp-controller="Storage" asp-action="Delete" method="post">
+            <div class="form-group">
+                <input type="submit" class="btn btn-default" value="Удалить" />
+            </div>
+        </form>
+    </div>
+</div>
